@@ -31,7 +31,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem2a()
+    #run_test_problem2a()
     run_test_problem2b()
 
 
@@ -103,7 +103,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -195,7 +195,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -203,6 +203,25 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
+    rect.attach_to(win)
+    height=rect.get_height()
+    width=rect.get_width()
+    center=rect.get_center()
+    x1=rect.get_center().x-width/2-delta
+    y1=rect.get_center().y-width/2-delta
+    x2=rect.get_center().x+width/2+delta
+    y2=rect.get_center().y+width/2+delta
+    for k in range(n-1):
+        rec=rg.Rectangle(rg.Point(x1,y1),rg.Point(x2,y2))
+        rec.attach_to(win)
+        #print(rec.corner_1)
+        #print(rec.corner_2)
+        x1 -= delta
+        y1 -= delta
+        x2 += delta
+        y2 += delta
+    #print('BREAK')
+    win.render()
 
 
 # -----------------------------------------------------------------------------
