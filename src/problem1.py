@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jared Brown.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -28,7 +28,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 import testing_helper
 import time
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -38,7 +38,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -149,6 +149,16 @@ def run_test_problem1a():
     #   print('       actual:  ', actual)
     # -------------------------------------------------------------------------
 
+    expected = 1.135
+    actual = problem1a(-1, 2)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
+    expected = -0.99178
+    actual = problem1a(-6, 6)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
 
 def problem1a(m, n):
     """
@@ -168,7 +178,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -176,6 +186,13 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
+
+    m2=m**2
+    n2=n**2
+    total=0
+    for k in range(n2-m2+1):
+        total+=math.sin(k+m2)
+    return total
 
 
 def run_test_problem1b():
@@ -198,6 +215,30 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+
+    #Test 1
+    expected = 5
+    actual = problem1b(3, 5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 2
+    expected = 1
+    actual = problem1b(2, 1)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 3
+    expected = 44
+    actual = problem1b(5, 40)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 4
+    expected = XXX
+    actual = problem1b(YYY, YYY)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
 
 
 def problem1b(m, f):
