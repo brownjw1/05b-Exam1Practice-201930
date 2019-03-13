@@ -235,8 +235,8 @@ def run_test_problem1b():
     print('       actual:  ', actual)
 
     # Test 4
-    expected = XXX
-    actual = problem1b(YYY, YYY)
+    expected = 8
+    actual = problem1b(2, 10)
     print('Test 1 expected:', expected)
     print('       actual:  ', actual)
 
