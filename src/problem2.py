@@ -119,9 +119,9 @@ def problem2a(circle, rectangle, window):
     rectangle.attach_to(window)
     window.render()
     window.continue_on_mouse_click()
-    line = rg.Line(start, end)
-    line.thickness = 3
+    line = rg.Line(start,end)
     line.attach_to(window)
+    line.arrow='last'
     window.render()
     window.continue_on_mouse_click()
     circle.fill_color=rectangle.outline_color
